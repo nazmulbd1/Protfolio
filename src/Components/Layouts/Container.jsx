@@ -4,7 +4,7 @@ import { cn } from '../../lib/utils';
    Container — সবচেয়ে সহজ ভার্সন
    ---------------------------------------------------------
    এই কম্পোনেন্টটা পুরো ওয়েবসাইটের কনটেন্টকে সেন্টার করে
-   এবং একটা নির্দিষ্ট max-width (প্রজেক্ট রিকোয়ার্ড করা 1320px)
+   এবং একটা নির্দিষ্ট max-width (প্রজেক্ট রিকোয়ার্ড করা 1440px)
    এর মধ্যে রাখে। বাইরে থেকে padding দেয় যাতে মোবাইলে
    কনটেন্ট স্ক্রিনের প্রান্তে লেগে থাকে না।
 
@@ -17,9 +17,9 @@ import { cn } from '../../lib/utils';
 // সাইজ অনুযায়ী max-width নির্ধারণ
 const SIZE_MAP = {
   sm:     'max-w-[768px]',
-  default: 'max-w-container',  // প্রজেক্টের ফিক্সড 1320px
+  default: 'max-w-container',  // প্রজেক্টের ফিক্সড 1440px (index.css --width-container থেকে আসে)
   lg:     'max-w-[1280px]',
-  xl:     'max-w-[1440px]',    // Hero-section এর জন্য একটু বেশি চওড়া
+  xl:     'max-w-[1440px]',    // default এর মতো 1440px (retention প্রসঙ্গে আছে)
   full:   'max-w-full',
 };
 

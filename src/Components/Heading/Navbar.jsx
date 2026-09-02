@@ -23,7 +23,7 @@ import {
    ========================================================= */
 
 // ----- Brand / Menu Items (এখান থেকে পরিবর্তন করা যাবে easily) -----
-const BRAND = { name: 'Weblance', homeHref: '/' };
+const BRAND = { name: 'Nazmul Sheikh', homeHref: '/' };
 
 const NAV_ITEMS = [
   { label: 'Home',      href: '/',         hasDropdown: true },
@@ -287,15 +287,21 @@ function Navbar({ isHeroPage = false }) {
     <header
       ref={navRef}
       className={cn(
-        'py-5 sticky top-0 z-50 border-b border-b-[2px] border-gray-400',
+        'sticky top-0 z-50',
+        // 👇 Full-width gray-400 bottom border (পুরো স্ক্রিন জুড়ে)
+        'border-b border-b-[1px] border-gray-400',
         isHeroPage
           ? 'bg-transparent shadow-none'
           : 'bg-surface shadow-nav',
       )}
     >
-      <Container>
-        <div className="flex items-center justify-between gap-6">
-          {/* বাম পাশে Brand */}
+      {/* 📌 Container size="xl" = 1440px (Hero/About/Services এর সাথে একদম মিল)
+           → Navbar-এর শুধুমাত্র কনটেন্ট (Brand, Menu, MobileNav) এই Container-এর ভিতরে
+              আর border উপরের header-এ → full width */}
+      <Container size="xl">
+        {/* --------------- উপরের মূল Navbar Row (Brand + Menu + Toggle) --------------- */}
+        <div className="flex items-center justify-between gap-6 py-5">
+          {/* বাম পাশে Brand — Container-এর প্যাডিং-এর ভিতরে (1440px) */}
           <Brand />
 
           {/* ডান পাশে Desktop মেনু */}
@@ -308,7 +314,8 @@ function Navbar({ isHeroPage = false }) {
           />
         </div>
 
-        {/* নিচে Mobile মেনু (খোলা থাকলে দেখাবে) */}
+        {/* --------------- নিচে Mobile মেনু (খোলা থাকলে দেখাবে) ---------------
+             → MobileNav ও Container-এর ভিতরে থাকছে → 1440px এর মধ্যে */}
         <MobileNav open={menuOpen} onNavigate={() => setMenuOpen(false)} />
       </Container>
     </header>

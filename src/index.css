@@ -33,7 +33,7 @@
   --color-text-muted:     #9ca3af;  /* ⬛ সেকেন্ডারি ছোট লেখা — ধূসর */
 
   /* ---------------- Layout ---------------- */
-  --width-container:      1320px;   /* 📏 পুরো ওয়েবসাইটের ফিক্সড max-width (Container default) */
+  --width-container:      1440px;   /* 📏 পুরো ওয়েবসাইটের ফিক্সড max-width (Container default) — 1440px (size=xl এর মতো) */
 
   /* ---------------- Shadows ---------------- */
   --shadow-nav: 0 4px 12px -4px #00000055; /* 🖇️ Navbar-এর নিচের ছায়া */

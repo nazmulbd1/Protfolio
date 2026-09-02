@@ -1,5 +1,6 @@
 import Container from './Layouts/Container';
 import { cn } from '../lib/utils';
+import nazmulsheikh from '../assets/nazmulsheikh1.webp'
 import {
   ArrowOutIcon,
   AsteriskIcon,
@@ -14,14 +15,14 @@ import {
 // ----- Hero এর সব টেক্সট/ডেটা এখানে - (এখান থেকে পরিবর্তন করলে পুরো hero আপডেট হয়ে যাবে)
 const HERO = {
   greeting: 'Welcome To My Creative Space',
-  name: 'darlene robertson',
+  name: 'Nazmul Sheikh Nahid',
   headlineLine1: 'designing with purpose',
   headlineLine2: 'and creativity',
   portraitAlt: 'Darlene Robertson — Designer এর ছবি',
   experience: '10+ Years Experience',
   // পোর্ট্রেট ইমেজের লিঙ্ক (AI-generated)
   portraitImg:
-    'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Professional%20studio%20portrait%20of%20a%20confident%20young%20woman%20with%20long%20straight%20dark%20brown%20hair%2C%20warm%20smile%2C%20wearing%20a%20vibrant%20orange%20double%2Dbreasted%20blazer%20over%20a%20white%20collared%20shirt%2C%20dark%20grainy%20charcoal%20gray%20studio%20background%2C%20high%20end%20editorial%20photography%2C%208k%2C%20soft%20rim%20lighting&image_size=portrait_4_3',
+    nazmulsheikh,
 };
 // সোশ্যাল মিডিয়া লিঙ্কগুলোর তালিকা
 const SOCIALS = [
