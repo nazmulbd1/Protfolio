@@ -1,0 +1,433 @@
+/* =========================================================
+   💡 বিগিনারদের জন্য গাইডলাইন:
+   =========================================================
+   এই index.css = পুরো প্রজেক্টের "চেঞ্জাবল কালার/সাইজ এর মূল সোর্স"।
+   এখানে --color-primary পরিবর্তন করলে পুরো ওয়েবসাইটের কমলা রঙ পরিবর্তন
+   হবে! --width-container 1320px → 1200px করলে সব section narrower হবে।
+
+   🔥 Tailwind v4 @theme = সব utility (text-, bg-, p-, m-, w-, h-...)
+      এখানে declare করা টোকেন ব্যবহার করে।
+   ========================================================= */
+@import "tailwindcss";
+
+/* =========================================================
+   🎨 DESIGN TOKENS (পুরো প্রজেক্টের কালার + সাইজ)
+   সব সাইজ পিক্সেল (px)-এ — কোনো rem/em নেই।
+   বেস ফন্ট 16px = মোবাইল/ডেস্কটপ সব জায়গায় একই রকম হবে।
+   ========================================================= */
+@theme {
+  /* ---------------- ====== 🔴 কালার (Colors) ====== ----------------
+     এইগুলো পরিবর্তন করলে পুরো ওয়েবসাইটের কালার থিম পরিবর্তন হয়।
+     primary = মূল ব্র্যান্ড রঙ (কমলা)
+     surface = পृष্ঠ/ব্যাকগ্রাউন্ডের রঙ (কালো টোন)
+  */
+  --color-primary:        #FF4500;  /* 🔸 ব্র্যান্ড কমলা (navbar বাটন, হেডলাইন, logo bg) */
+  --color-primary-hover:  #E63E00;  /* 🔸 কমলার গাঢ় টোন (hover অবস্থায়) */
+  --color-primary-soft:   #FF45001a;/* 🔸 কমলার হালকা ট্রান্সপারেন্ট (এফেক্টে) */
+
+  --color-surface:        #0b0b0f;  /* 🔳 পুরো পেজের গাঢ় কালো ব্যাকগ্রাউন্ড */
+  --color-surface-raised: #15151c;  /* 🔳 কার্ড/ফ্রেমের জন্য একটু হালকা কালো */
+  --color-surface-hover:  #ffffff0d;/* 🔳 hover হলে হালকা সাদা আভা (5% সাদা) */
+
+  --color-text-inverse:   #ffffff;  /* ⬜ মূল লেখার রঙ — সাদা */
+  --color-text-muted:     #9ca3af;  /* ⬛ সেকেন্ডারি ছোট লেখা — ধূসর */
+
+  /* ---------------- Layout ---------------- */
+  --width-container:      1320px;   /* 📏 পুরো ওয়েবসাইটের ফিক্সড max-width (Container default) */
+
+  /* ---------------- Shadows ---------------- */
+  --shadow-nav: 0 4px 12px -4px #00000055; /* 🖇️ Navbar-এর নিচের ছায়া */
+
+  /* ---------------- Border Radii (কোণ গোল করা) (সব px) ----------------
+     sm=খুব কম, pill=পুরোপুরি গোল pill shape
+  */
+  --radius-none: 0px;
+  --radius-sm:   2px;
+  --radius:      4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-2xl:  16px;
+  --radius-3xl:  24px;
+  --radius-4xl:  32px;
+  --radius-pill: 9999px;
+
+  /* ---------------- Spacing (ফাঁকা জায়গা) — সব px (base: 16px) ----------------
+     📏 1 space unit = 4px
+     --spacing-1 = 4px, --spacing-2 = 8px, --spacing-4 = 16px ... এভাবে
+     Tailwind uses: p-1, mx-2, py-4, gap-6, etc. → সবই এখান থেকে আসে
+  */
+  --spacing-0:   0px;
+  --spacing-px:  1px;
+  --spacing-0_5: 2px;
+  --spacing-1:   4px;
+  --spacing-1_5: 6px;
+  --spacing-2:   8px;
+  --spacing-2_5: 10px;
+  --spacing-3:   12px;
+  --spacing-3_5: 14px;
+  --spacing-4:   16px;
+  --spacing-5:   20px;
+  --spacing-6:   24px;
+  --spacing-7:   28px;
+  --spacing-8:   32px;
+  --spacing-9:   36px;
+  --spacing-10:  40px;
+  --spacing-11:  44px;
+  --spacing-12:  48px;
+  --spacing-14:  56px;
+  --spacing-16:  64px;
+  --spacing-20:  80px;
+  --spacing-24:  96px;
+  --spacing-28:  112px;
+  --spacing-32:  128px;
+  --spacing-36:  144px;
+  --spacing-40:  160px;
+  --spacing-44:  176px;
+  --spacing-48:  192px;
+  --spacing-52:  208px;
+  --spacing-56:  224px;
+  --spacing-60:  240px;
+  --spacing-64:  256px;
+  --spacing-72:  288px;
+  --spacing-80:  320px;
+  --spacing-96:  384px;
+
+  /* ---------------- Font Sizes (ফন্টের মাপ) — সব px ----------------
+     xs=খুব ছোট, base=সাধারণ 16px, 3xl+=বড় হেডলাইনের জন্য
+     className: text-xs, text-lg, text-4xl ... etc.
+  */
+  --font-size-xs:   12px;
+  --font-size-sm:   14px;
+  --font-size-base: 16px;
+  --font-size-lg:   18px;
+  --font-size-xl:   20px;
+  --font-size-2xl:  24px;
+  --font-size-3xl:  30px;
+  --font-size-4xl:  36px;
+  --font-size-5xl:  48px;
+  --font-size-6xl:  60px;
+  --font-size-7xl:  72px;
+  --font-size-8xl:  96px;
+  --font-size-9xl:  128px;
+
+  /* ---------------- Line Heights (all px, matches font size ratio) ---------------- */
+  --line-height-tight:  20px;
+  --line-height-snug:   22px;
+  --line-height-normal: 24px;
+  --line-height-relaxed: 26px;
+  --line-height-loose:  32px;
+  --line-height-3:      12px;
+  --line-height-4:      16px;
+  --line-height-5:      20px;
+  --line-height-6:      24px;
+  --line-height-7:      28px;
+  --line-height-8:      32px;
+  --line-height-9:      36px;
+  --line-height-10:     40px;
+
+  /* ---------------- Widths (all px, Tailwind standard rem → 16px) ---------------- */
+  --width-3xs: 160px;   /* 10rem */
+  --width-2xs: 176px;   /* 11rem */
+  --width-xs:  320px;   /* 20rem */
+  --width-sm:  384px;   /* 24rem */
+  --width-md:  448px;   /* 28rem */
+  --width-lg:  512px;   /* 32rem */
+  --width-xl:  576px;   /* 36rem */
+  --width-2xl: 672px;   /* 42rem */
+  --width-3xl: 768px;   /* 48rem */
+  --width-4xl: 896px;   /* 56rem */
+  --width-5xl: 1024px;  /* 64rem */
+  --width-6xl: 1152px;  /* 72rem */
+  --width-7xl: 1280px;  /* 80rem */
+  --width-prose: 65ch;
+  --width-screen-sm: 640px;
+  --width-screen-md: 768px;
+  --width-screen-lg: 1024px;
+  --width-screen-xl: 1280px;
+  --width-screen-2xl: 1536px;
+
+  /* ---------------- Min-Widths (all px) ---------------- */
+  --min-width-0:    0px;
+  --min-width-1:    4px;
+  --min-width-2:    8px;
+  --min-width-4:    16px;
+  --min-width-8:    32px;
+  --min-width-16:   64px;
+  --min-width-32:   128px;
+  --min-width-64:   256px;
+  --min-width-xs:   320px;   /* 20rem */
+  --min-width-sm:   384px;   /* 24rem */
+  --min-width-md:   448px;   /* 28rem */
+  --min-width-lg:   512px;   /* 32rem */
+  --min-width-xl:   576px;   /* 36rem */
+  --min-width-2xl:  672px;   /* 42rem */
+  --min-width-3xl:  768px;   /* 48rem */
+  --min-width-4xl:  896px;   /* 56rem */
+  --min-width-5xl:  1024px;  /* 64rem */
+  --min-width-6xl:  1152px;  /* 72rem */
+  --min-width-7xl:  1280px;  /* 80rem */
+  --min-width-full: 100%;
+  --min-width-min:  min-content;
+  --min-width-max:  max-content;
+  --min-width-fit:  fit-content;
+
+  /* ---------------- Max-Widths (all px, Tailwind standard 1rem = 16px) ---------------- */
+  --max-width-0:    0px;
+  --max-width-1:    4px;
+  --max-width-2:    8px;
+  --max-width-4:    16px;
+  --max-width-8:    32px;
+  --max-width-16:   64px;
+  --max-width-32:   128px;
+  --max-width-64:   256px;
+  --max-width-xs:   320px;   /* 20rem */
+  --max-width-sm:   384px;   /* 24rem */
+  --max-width-md:   448px;   /* 28rem */
+  --max-width-lg:   512px;   /* 32rem */
+  --max-width-xl:   576px;   /* 36rem */
+  --max-width-2xl:  672px;   /* 42rem */
+  --max-width-3xl:  768px;   /* 48rem */
+  --max-width-4xl:  896px;   /* 56rem */
+  --max-width-5xl:  1024px;  /* 64rem */
+  --max-width-6xl:  1152px;  /* 72rem */
+  --max-width-7xl:  1280px;  /* 80rem */
+  --max-width-prose: 65ch;
+  --max-width-screen-sm: 640px;
+  --max-width-screen-md: 768px;
+  --max-width-screen-lg: 1024px;
+  --max-width-screen-xl: 1280px;
+  --max-width-screen-2xl: 1536px;
+
+  /* ---------------- Heights ---------------- */
+  --height-0:   0px;
+  --height-px:  1px;
+  --height-0_5: 2px;
+  --height-1:   4px;
+  --height-1_5: 6px;
+  --height-2:   8px;
+  --height-2_5: 10px;
+  --height-3:   12px;
+  --height-3_5: 14px;
+  --height-4:   16px;
+  --height-5:   20px;
+  --height-6:   24px;
+  --height-7:   28px;
+  --height-8:   32px;
+  --height-9:   36px;
+  --height-10:  40px;
+  --height-11:  44px;
+  --height-12:  48px;
+  --height-14:  56px;
+  --height-16:  64px;
+  --height-20:  80px;
+  --height-24:  96px;
+  --height-28:  112px;
+  --height-32:  128px;
+  --height-36:  144px;
+  --height-40:  160px;
+  --height-44:  176px;
+  --height-48:  192px;
+  --height-52:  208px;
+  --height-56:  224px;
+  --height-60:  240px;
+  --height-64:  256px;
+  --height-72:  288px;
+  --height-80:  320px;
+  --height-96:  384px;
+  --height-auto: auto;
+  --height-screen: 100vh;
+  --height-svh:  100svh;
+  --height-lvh:  100lvh;
+  --height-dvh:  100dvh;
+  --height-min:  min-content;
+  --height-max:  max-content;
+  --height-fit:  fit-content;
+
+  /* ---------------- Max-Heights ---------------- */
+  --max-height-0:   0px;
+  --max-height-px:  1px;
+  --max-height-1:   4px;
+  --max-height-2:   8px;
+  --max-height-4:   16px;
+  --max-height-8:   32px;
+  --max-height-16:  64px;
+  --max-height-32:  128px;
+  --max-height-64:  256px;
+  --max-height-96:  384px;
+  --max-height-full: 100%;
+  --max-height-screen: 100vh;
+  --max-height-svh: 100svh;
+  --max-height-min: min-content;
+  --max-height-max: max-content;
+  --max-height-fit: fit-content;
+
+  /* ---------------- Sizes (w + h combined) ---------------- */
+  --size-0:   0px;
+  --size-px:  1px;
+  --size-0_5: 2px;
+  --size-1:   4px;
+  --size-1_5: 6px;
+  --size-2:   8px;
+  --size-2_5: 10px;
+  --size-3:   12px;
+  --size-3_5: 14px;
+  --size-4:   16px;
+  --size-5:   20px;
+  --size-6:   24px;
+  --size-7:   28px;
+  --size-8:   32px;
+  --size-9:   36px;
+  --size-10:  40px;
+  --size-11:  44px;
+  --size-12:  48px;
+  --size-14:  56px;
+  --size-16:  64px;
+  --size-20:  80px;
+  --size-24:  96px;
+  --size-28:  112px;
+  --size-32:  128px;
+  --size-36:  144px;
+  --size-40:  160px;
+  --size-44:  176px;
+  --size-48:  192px;
+  --size-52:  208px;
+  --size-56:  224px;
+  --size-60:  240px;
+  --size-64:  256px;
+  --size-72:  288px;
+  --size-80:  320px;
+  --size-96:  384px;
+  --size-auto: auto;
+
+  /* ---------------- Inset / Top-Right-Bottom-Left ---------------- */
+  --inset-0:   0px;
+  --inset-px:  1px;
+  --inset-0_5: 2px;
+  --inset-1:   4px;
+  --inset-1_5: 6px;
+  --inset-2:   8px;
+  --inset-2_5: 10px;
+  --inset-3:   12px;
+  --inset-3_5: 14px;
+  --inset-4:   16px;
+  --inset-5:   20px;
+  --inset-6:   24px;
+  --inset-7:   28px;
+  --inset-8:   32px;
+  --inset-9:   36px;
+  --inset-10:  40px;
+  --inset-11:  44px;
+  --inset-12:  48px;
+  --inset-14:  56px;
+  --inset-16:  64px;
+  --inset-20:  80px;
+  --inset-24:  96px;
+  --inset-28:  112px;
+  --inset-32:  128px;
+  --inset-40:  160px;
+  --inset-44:  176px;
+  --inset-48:  192px;
+  --inset-auto: auto;
+  --inset-1/2: 50%;
+  --inset-1/3: 33.333333%;
+  --inset-2/3: 66.666667%;
+  --inset-1/4: 25%;
+  --inset-2/4: 50%;
+  --inset-3/4: 75%;
+  --inset-full: 100%;
+
+  /* ---------------- Gaps ---------------- */
+  --gap-0:   0px;
+  --gap-px:  1px;
+  --gap-0_5: 2px;
+  --gap-1:   4px;
+  --gap-1_5: 6px;
+  --gap-2:   8px;
+  --gap-2_5: 10px;
+  --gap-3:   12px;
+  --gap-3_5: 14px;
+  --gap-4:   16px;
+  --gap-5:   20px;
+  --gap-6:   24px;
+  --gap-7:   28px;
+  --gap-8:   32px;
+  --gap-9:   36px;
+  --gap-10:  40px;
+  --gap-11:  44px;
+  --gap-12:  48px;
+  --gap-14:  56px;
+  --gap-16:  64px;
+  --gap-20:  80px;
+  --gap-24:  96px;
+  --gap-28:  112px;
+  --gap-32:  128px;
+
+  /* ---------------- Padding (covered by spacing, but explicit) ---------------- */
+  /* ---------------- Margins (covered by spacing) ---------------- */
+  /* (margin/padding utilities reuse --spacing tokens) */
+
+  /* ---------------- Breakpoints ---------------- */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* ---------------- Letter Spacing (tracking) px ---------------- */
+  --tracking-tighter: -1px;
+  --tracking-tight:   -0.5px;
+  --tracking-normal:   0px;
+  --tracking-wide:     0.5px;
+  --tracking-wider:    1px;
+  --tracking-widest:   2px;
+
+  /* ---------------- Ring / Outline Width ---------------- */
+  --ring-width: 3px;
+  --ring-offset-width: 2px;
+  --outline-offset-0:   0px;
+  --outline-offset-1:   1px;
+  --outline-offset-2:   2px;
+  --outline-offset-4:   4px;
+  --outline-offset-8:   8px;
+}
+
+/* ================== Global Base ================== */
+html {
+  font-size: 16px; /* fixed 16px base so px calculations are predictable */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text-inverse);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Hide focus ring on mouse users — show only on keyboard (a11y) */
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ================== Custom Animations ================== */
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes slow-spin-reverse {
+  from { transform: rotate(360deg); }
+  to   { transform: rotate(0deg); }
+}
+
+.animate-spin-slow          { animation: slow-spin          20s linear infinite; }
+.animate-spin-slow-reverse  { animation: slow-spin-reverse  20s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-spin-slow-reverse { animation: none; }
+}
