@@ -16,8 +16,8 @@ import {
 const HERO = {
   greeting: 'Welcome To My Creative Space',
   name: 'Nazmul Sheikh Nahid',
-  headlineLine1: 'designing with purpose',
-  headlineLine2: 'and creativity',
+  headlineLine1: 'Frontend and Backend Developer',
+  headlineLine2: 'with Reack & Next.js',
   portraitAlt: 'Darlene Robertson — Designer এর ছবি',
   experience: '10+ Years Experience',
   // পোর্ট্রেট ইমেজের লিঙ্ক (AI-generated)
@@ -40,7 +40,7 @@ const STATS = [
     subtitleArrow: false,
   },
   {
-    heading: '8',
+    heading: '5',
     suffix: '+',                       // লাইম গ্রিনে "+" চিহ্ন
     headingGlitch: false,
     subtitle: 'Projects Completed',

@@ -31,12 +31,12 @@ import {
    📋 Footer data — এখান থেকে সব লেখা/লিঙ্ক পরিবর্তন করা যাবে
    ========================================================= */
 const FOOTER = {
-  brandName: 'Weblance.',
+  brandName: 'NS.',
 
   contacts: [
-    { label: 'info@domainname.com',        href: 'mailto:info@domainname.com' },
-    { label: '+(1) 123 – 456 – 789',       href: 'tel:+1123456789' },
-    { label: '123 Business Street, Your City', href: '#' },
+    { label: 'nazmulsheikhnahid@gmail.com',        href: 'mailto:nazmulsheikhnahid@gmail.com' },
+    { label: '+880 1748 052136',       href: 'tel:+8801748052136' },
+    { label: 'Dhaka, Bangladesh', href: '#' },
   ],
 
   aboutTitle: 'About Company',

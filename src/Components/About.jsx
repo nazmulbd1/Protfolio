@@ -20,12 +20,12 @@ const ABOUT = {
   description:
     "I am a passionate creative professional dedicated to transforming ideas meaningful digital experiences. My journey began with a deep curiosity for design and has grown into a strong foundation of skills in graphic design, UI/UX, and storytelling. Over time, I have worked on diverse projects.",
 
-  name: 'Darlene Robertson',
-  role: 'Graphic Designer',
-  email: 'info@example.com',
-  phone: '+91 987647 432',
+  name: 'Nazmul Sheikh Nahid',
+  role: 'Full Stack Developer',
+  email: 'nazmulsheikhnahid@gmail.com',
+  phone: '+880 1748 052136',
 
-  experienceYears: '10+',
+  experienceYears: '1+',
   reviewScore: '4.9',
   reviewCount: 'Over 3000 Reviews',
 

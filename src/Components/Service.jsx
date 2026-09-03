@@ -24,7 +24,7 @@ import {
    📝 আপনার তথ্য এখান থেকে পরিবর্তন করুন
    ========================================================= */
 const SERVICES = {
-  badge: '// 02. SERVICES',
+  badge: '// SERVICES',
   heading: 'Services & Solutions',
   subtitle:
     'End-to-end web engineering, from conceptual design to high-conversion deployment.',
@@ -45,10 +45,10 @@ const SERVICES = {
     },
     {
       Icon: GlobeIcon,
-      tag: 'CMS / E-COMMERCE',
-      title: 'Custom WordPress Development',
+      tag: 'E-COMMERCE',
+      title: 'React & Next.js Development',
       description:
-        'Bespoke WordPress themes, custom WooCommerce stores, Gutenberg block development, and headless CMS integrations.',
+        'E-commerce website development web app, custom WooCommerce stores, Gutenberg block development, and headless CMS integrations.',
       features: [
         'Pixel-perfect custom themes',
         'Advanced Custom Fields (ACF)',
