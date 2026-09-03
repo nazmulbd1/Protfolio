@@ -9,21 +9,9 @@ import {
   MenuIcon,
 } from '../Icons';
 
-/* =========================================================
-   Navbar — Navigation Bar (সহজ ভার্সন)
-   ---------------------------------------------------------
-   এই কম্পোনেন্টটা ওয়েবসাইটের উপরে থাকা মেনু বার।
-   এখানে আছে:
-     ১) ব্র্যান্ড লোগো + নাম (বাম পাশে)
-     ২) মেনু লিস্ট (ডেস্কটপে দেখা যায়)
-     ৩) Contact Us বাটন
-     ৪) মোবাইলে হামবার্গার মেনু (ক্লিক করলে মেনু খোলা/বন্ধ হয়)
-
-   মোবাইল মেনু: Escape চেপে বা বাইরে ক্লিক করলে বন্ধ হয়ে যায়।
-   ========================================================= */
 
 // ----- Brand / Menu Items (এখান থেকে পরিবর্তন করা যাবে easily) -----
-const BRAND = { name: 'Nazmul Sheikh', homeHref: '/' };
+const BRAND = { name: 'NS', homeHref: '/' };
 
 const NAV_ITEMS = [
   { label: 'Home',      href: '/',         hasDropdown: true },
@@ -38,9 +26,7 @@ const NAV_ITEMS = [
 const FOCUS_RING =
   'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary';
 
-// =========================================================
 // ১) BRAND LOGO অংশ (বাম পাশে)
-// =========================================================
 function Brand() {
   return (
     <a
@@ -55,13 +41,13 @@ function Brand() {
       {/* কমলা রঙের বৃত্তের ভিতরে ডাবল অ্যারো লোগো */}
       <span
         className={cn(
-          'w-14 h-14 rounded-full flex items-center justify-center',
+          'w-10 h-10 rounded-full flex items-center justify-center',
           'bg-primary hover:scale-[1.03]',
           'shadow-[0_6px_18px_-4px_rgba(255,69,0,0.5)] transition-transform duration-300',
         )}
         aria-hidden="true"
       >
-        <BrandMark size={28} />
+        <BrandMark size={22} />
       </span>
 
       {/* ব্র্যান্ডের নাম — Weblance. */}
@@ -73,9 +59,7 @@ function Brand() {
   );
 }
 
-// =========================================================
 // ২) একক Menu Link
-// =========================================================
 function NavLink({ item }) {
   return (
     <li className="relative">
@@ -100,11 +84,8 @@ function NavLink({ item }) {
   );
 }
 
-// =========================================================
 // ৩) Contact Us বাটন
-//    — Hover করলে বাম → ডান সাদা রঙ slide হয়ে আসে
-//    — কাজটা হয় before pseudo-element দিয়ে
-// =========================================================
+
 function ContactButton({ className = '', onClick }) {
   return (
     <a
@@ -115,7 +96,7 @@ function ContactButton({ className = '', onClick }) {
         // বাটনের basic দৃশ্য
         'group relative overflow-hidden z-0',
         'inline-flex items-center gap-3',
-        'px-6 py-3.5 rounded-pill',
+        'px-3 py-1 rounded-pill',
         'text-lg font-semibold text-text-inverse',
         'transition-colors duration-400 ease-out',
         'bg-primary hover:text-primary focus-visible:text-primary',
@@ -124,8 +105,6 @@ function ContactButton({ className = '', onClick }) {
         'active:translate-y-[1px]',
 
         // ----- Hover এ সাদা রঙ বাম → ডান slide -----
-        // `before` = একটা hidden layer যা বামে (-left-full) আছে
-        // hover/focus হলে এটা 0 তে আসে → full button cover করে
         `before:content-[''] before:absolute before:inset-y-0 before:-left-full before:w-full before:h-full`,
         'before:bg-text-inverse before:transition-[left] before:duration-400 before:ease-out before:-z-10',
         'hover:before:left-0 focus-visible:before:left-0',
@@ -138,7 +117,7 @@ function ContactButton({ className = '', onClick }) {
       <span
         className={cn(
           'relative z-10',
-          'w-11 h-11 rounded-pill flex items-center justify-center',
+          'w-10 h-10 rounded-pill flex items-center justify-center',
           'transition-colors duration-400 ease-out',
           'bg-text-inverse group-hover:bg-primary group-focus-visible:bg-primary',
         )}
@@ -154,9 +133,7 @@ function ContactButton({ className = '', onClick }) {
   );
 }
 
-// =========================================================
 // ৪) Desktop-এর মেনু (md বা তার উপরে screen-এ দেখা যায়)
-// =========================================================
 function DesktopNav() {
   return (
     <nav
@@ -173,9 +150,7 @@ function DesktopNav() {
   );
 }
 
-// =========================================================
 // ৫) Mobile Menu Toggle বাটন (হামবার্গার / ক্রস আইকন)
-// =========================================================
 function MobileMenuToggle({ open, onToggle }) {
   return (
     <button
@@ -197,11 +172,9 @@ function MobileMenuToggle({ open, onToggle }) {
   );
 }
 
-// =========================================================
+
 // ৬) Mobile মেনু (md এর নিচে — মোবাইল/ট্যাবে)
-// =========================================================
 function MobileNav({ open, onNavigate }) {
-  // যদি open = false হয়, কিছুই রেন্ডার করব না
   if (!open) return null;
 
   return (
@@ -238,30 +211,20 @@ function MobileNav({ open, onNavigate }) {
     </nav>
   );
 }
-
-// =========================================================
 // ⭐️ মূল Navbar কম্পোনেন্ট (সব উপাংশ একসাথে এখানে)
-// =========================================================
 function Navbar({ isHeroPage = false }) {
   // মোবাইল মেনু open/close-এর state (useBoolean এর সহজ alternative)
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Navbar-এর বাইরে ক্লিক করলে detect করার জন্য ref
   const navRef = useRef(null);
-
-  // -------- Effect 1: Escape চেপে মেনু বন্ধ করা --------
   useEffect(() => {
-    // যদি মেনু খোলা না থাকে, কিছু করার দরকার নাই
     if (!menuOpen) return undefined;
-
-    // কী-প্রেস handler
     function handleKeyDown(e) {
       if (e.key === 'Escape') {
         setMenuOpen(false);
       }
     }
 
-    // listener যোগ করছি
     window.addEventListener('keydown', handleKeyDown);
 
     // Cleanup: useEffect return করা ফাংশনটা component unmount হলে চলে
