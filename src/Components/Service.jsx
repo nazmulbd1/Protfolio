@@ -24,62 +24,62 @@ import {
    📝 আপনার তথ্য এখান থেকে পরিবর্তন করুন
    ========================================================= */
 const SERVICES = {
-  badge: '// SERVICES',
+  badge: 'WHAT I OFFER',
   heading: 'Services & Solutions',
   subtitle:
-    'End-to-end web engineering, from conceptual design to high-conversion deployment.',
+    'From frontend interfaces to scalable backend systems, I deliver complete web solutions with clean code and modern user experiences',
 
   cards: [
     {
       Icon: CodeBracketIcon,
       tag: 'REACT / NEXT.JS',
-      title: 'Full-Stack Web Apps',
+      title: 'Fronted Development',
       description:
-        'Custom full-stack web applications with Next.js, React, modern state management, and real-time features.',
+        'Building pixel-perfect, responsive and high-performance user interfaces using React, Next.js and modern frontend technologies.',
       features: [
-        'SSR / Static generation for SEO',
-        'Clean modular architecture',
-        'Responsive & accessible UI',
-        'API integration & database setup',
+        'React Components',
+        'Modern & Attractive UI Development',
+        'Interactive User Experience',
+        'Fast & Optimized Performance',
       ],
     },
     {
       Icon: GlobeIcon,
-      tag: 'E-COMMERCE',
-      title: 'React & Next.js Development',
+      tag: 'Full Stack',
+      title: 'Full Stack Development',
       description:
-        'E-commerce website development web app, custom WooCommerce stores, Gutenberg block development, and headless CMS integrations.',
+        'Complete end-to-end web application development from frontend interfaces to scalable backend systems',
       features: [
-        'Pixel-perfect custom themes',
-        'Advanced Custom Fields (ACF)',
-        'WooCommerce payment gateways',
-        'High-security hardening',
+        'Reack & Next.js',
+        'Node.js Backend',
+        'Database Design',
+        'API Development',
       ],
     },
     {
       Icon: SparkleIcon,
-      tag: 'GSAP / THREE.JS',
-      title: 'Motion & Interactive Web',
+      tag: 'Responsive',
+      title: 'Responsive Design',
       description:
-        'Award-worthy creative web experiences featuring smooth scroll triggers, WebGL visual effects, and fluid micro-interactions.',
+        'Creating pixel-perfect, mobile-first designs that work flawlessly across all devices and screen sizes.',
       features: [
-        'GSAP & ScrollTrigger choreography',
-        'Custom canvas animations',
-        'Zero-lag performance tuning',
-        'Accessible reduced-motion fallbacks',
+        'Mobile First',
+        'Cross Browser',
+        'Tailwind CSS',
+        'Flexbox & Grid',
       ],
     },
     {
       Icon: GaugeIcon,
-      tag: 'AUDIT / SPEED',
-      title: 'Performance & SEO Optimization',
+      tag: 'API',
+      title: 'API Integration',
       description:
-        'Deep technical audits and optimization to achieve 95+ Google PageSpeed and Lighthouse scores on mobile and desktop.',
+        'Seamlessly connecting your frontend with RESTful APIs, third-party services and custom backends.',
       features: [
-        'Core Web Vitals remediation',
-        'Asset optimization & modern formats',
-        'Server-side caching setup',
-        'Semantic SEO structured data',
+        'REST APIs',
+        'Third-party APIs',
+        'Authentication',
+        'Real-time Data',
       ],
     },
   ],

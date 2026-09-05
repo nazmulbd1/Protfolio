@@ -14,12 +14,12 @@ import {
 const BRAND = { name: 'NS', homeHref: '/' };
 
 const NAV_ITEMS = [
-  { label: 'Home',      href: '/',         hasDropdown: true },
+  { label: 'Home',      href: '/',         hasDropdown: false },
   { label: 'About Us',  href: '/about',    hasDropdown: false },
   { label: 'Services',  href: '/services', hasDropdown: false },
   { label: 'Blog',      href: '/blog',     hasDropdown: false },
-  { label: 'Pages',     href: '/pages',    hasDropdown: true },
-  { label: 'Contact Us',href: '/contact',  hasDropdown: false },
+  { label: 'Pages',     href: '/pages',    hasDropdown: false },
+  // { label: 'Contact Us',href: '/contact',  hasDropdown: false },
 ];
 
 // Focus ring যাতে কীবোর্ড দিয়ে navigate করলে দেখা যায় (accessibility)
@@ -96,7 +96,7 @@ function ContactButton({ className = '', onClick }) {
         // বাটনের basic দৃশ্য
         'group relative overflow-hidden z-0',
         'inline-flex items-center gap-3',
-        'px-3 py-1 rounded-pill',
+        'pl-3 pr-1 py-1 rounded-pill',
         'text-lg font-semibold text-text-inverse',
         'transition-colors duration-400 ease-out',
         'bg-primary hover:text-primary focus-visible:text-primary',

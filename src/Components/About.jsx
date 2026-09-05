@@ -16,9 +16,9 @@ import { ArrowRight, AsteriskIcon } from './Icons';
    📝 আপনার তথ্য এখান থেকে পরিবর্তন করুন (সব উপরে রাখা হয়েছে)
    ========================================================= */
 const ABOUT = {
-  heading: 'Turning idea into impactful visual experiences',
+  heading: 'Transforming Ideas Into Digital Reality',
   description:
-    "I am a passionate creative professional dedicated to transforming ideas meaningful digital experiences. My journey began with a deep curiosity for design and has grown into a strong foundation of skills in graphic design, UI/UX, and storytelling. Over time, I have worked on diverse projects.",
+    "I'm a passionate full stack web developer with over 1 years of experience building robust, scalable, and user-friendly web applications. My expertise spans across modern technologies including React and Next.js.",
 
   name: 'Nazmul Sheikh Nahid',
   role: 'Full Stack Developer',
@@ -54,7 +54,7 @@ const ABOUT = {
     { name: 'Tailwind CSS',             percent: 96, category: 'Frontend'    },
     { name: 'Node.js',                  percent: 88, category: 'Backend'     },
     { name: 'Express.js',               percent: 89, category: 'Backend'     },
-    { name: 'MongoDB',                  percent: 84, category: 'Performance' },
+    { name: 'MongoDB',                  percent: 84, category: 'Backend' },
   ],
 };
 

@@ -16,10 +16,10 @@ import {
 const HERO = {
   greeting: 'Welcome To My Creative Space',
   name: 'Nazmul Sheikh Nahid',
-  headlineLine1: 'Frontend and Backend Developer',
-  headlineLine2: 'with Reack & Next.js',
-  portraitAlt: 'Darlene Robertson — Designer এর ছবি',
-  experience: '10+ Years Experience',
+  headlineLine1: 'Frontend and Backend Developer with React & Next.js',
+  headlineLine2: 'Full Stack Developer with 1+ years of experience crafting high-performance web applications. I turn ideas into elegant, scalable digital products.',
+  portraitAlt: 'Nazmul Sheikh Nahid — Designer এর ছবি',
+  experience: '1+ Years Experience',
   // পোর্ট্রেট ইমেজের লিঙ্ক (AI-generated)
   portraitImg:
     nazmulsheikh,
@@ -85,12 +85,19 @@ function WelcomeBadge() {
 // ২) বড় শিরোনাম (Hi, I'm darlene robertson! designing with...)
 function Headline() {
   return (
-    <h1 className="mt-6 font-bold tracking-tight text-[48px] md:text-[70px] leading-[1.05]">
+    <div>
+      <h1 className="mt-6 font-bold tracking-tight text-[48px] md:text-[70px] leading-[1.2]">
       <span className="text-text-inverse">Hi, I&apos;m </span>
       <span className="text-primary">{HERO.name}!</span><br />
-      <span className="text-text-inverse">{HERO.headlineLine1}</span><br />
-      <span className="text-text-inverse">{HERO.headlineLine2}</span>
+
     </h1>
+    <h2 className='leading-[1.5]'>
+      <span className="text-text-inverse font-semibold text-[32px]">{HERO.headlineLine1}</span><br />
+      <span className="text-text-inverse font-normal text-[20px]">{HERO.headlineLine2}</span>
+    </h2>
+    </div>
+
+    
   );
 }
 
@@ -304,7 +311,7 @@ function ExperienceBadge() {
       aria-label={`${HERO.experience} in design`}
     >
       {/* ব্যাজের আকার — মোবাইলে ছোট, ডেস্কটপে বড় */}
-      <div className="relative w-30 h-30 sm:w-48 sm:h-48 lg:w-56 lg:h-56">
+      <div className="relative w-30 h-30 sm:w-44 sm:h-44 lg:w-50 lg:h-50">
         {/* 1) ট্রান্সপারেন্ট কালো বৃত্ত + blur (bg disk) */}
         <div
           aria-hidden="true"
