@@ -186,7 +186,7 @@ function InfoCard({ Icon, label, value }) {
       {/* বামে আইকন এরিয়া */}
       <span
         className={cn(
-          'w-10 h-10 rounded-lg flex items-center justify-center shrink-0',
+          'w-8 h-8 rounded-lg flex items-center justify-center shrink-0',
           'bg-black/40 text-primary',
         )}
       >

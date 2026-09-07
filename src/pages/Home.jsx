@@ -13,6 +13,8 @@ import Navbar from '../Components/Heading/Navbar';
 import Herosection from '../Components/Herosection';
 import About from '../Components/About';
 import Services from '../Components/Service';
+import Projects from '../Components/Project';
+import Contact from '../Components/Contact';
 import heroBgImage from '../assets/hero-bg-image-elite.webp';
 
 function Home() {
@@ -57,6 +59,12 @@ function Home() {
 
       {/* 🔴 ৩) Services Section — Services & Solutions (৪টা কার্ড) */}
       <Services />
+
+      {/* 🔴 ৪) Projects Section — My Projects Showcase (৩টা কার্ড) */}
+      <Projects />
+
+      {/* 🔴 ৫) Contact Section — Let's talk. + Briefing Form */}
+      <Contact />
     </main>
   );
 }
