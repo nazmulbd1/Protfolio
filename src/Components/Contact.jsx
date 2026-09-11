@@ -24,13 +24,13 @@ const CONTACT = {
   // প্যারাগ্রাফের অংশ গুলো — কোন কোন অংশ কমলা highlight হবে
   // highlight: true = কমলা ব্যাকগ্রাউন্ড + সাদা লেখা (ওয়েবসাইট থিম অনুযায়ী)
   paragraphs: [
-    { text: 'Direct line to Nazmul — no middleman and no', highlight: true },
-    { text: ' unnecessary back-and-forth. Tell me',         highlight: true },
-    { text: 'about',                                         highlight: true },
-    { text: ' your next web project or ecommerce idea, ',    highlight: true },
-    { text: 'and',                                           highlight: true },
-    { text: " I'll reply within 24 hours with concrete next",highlight: true },
-    { text: ' steps.',                                       highlight: true },
+    { text: "Direct line to Nazmul — no middleman and no unnecessary back-and-forth. Tell me about your next web project or e-commerce idea, and I'll reply within 24 hours with concrete next steps.", highlight: true },
+    // { text: ' ',         highlight: true },
+    // { text: '',                                         highlight: true },
+    // { text: ' ',    highlight: true },
+    // { text: '',                                           highlight: true },
+    // { text: " ", highlight: true },
+    // { text: ' ',                                       highlight: true },
   ],
 
   // ২x২ গ্রিডে যোগাযোগের তথ্য
@@ -105,7 +105,7 @@ function LeftHeader() {
             className={cn(
               part.highlight && [
                 'inline-block px-2 py-[2px] my-[2px]',
-                'bg-primary text-text-inverse font-semibold',
+                'text-text-inverse font-semibold',
               ],
             )}
           >
