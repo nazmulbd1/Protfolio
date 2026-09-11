@@ -33,7 +33,7 @@ const SERVICES = {
     {
       Icon: CodeBracketIcon,
       tag: 'REACT / NEXT.JS',
-      title: 'Fronted Development',
+      title: 'Frontend Development',
       description:
         'Building pixel-perfect, responsive and high-performance user interfaces using React, Next.js and modern frontend technologies.',
       features: [
@@ -48,9 +48,9 @@ const SERVICES = {
       tag: 'Full Stack',
       title: 'Full Stack Development',
       description:
-        'Complete end-to-end web application development from frontend interfaces to scalable backend systems',
+        'End-to-end web application development — from database design to deployment, I handle every layer of your product.',
       features: [
-        'Reack & Next.js',
+        'React & Next.js',
         'Node.js Backend',
         'Database Design',
         'API Development',

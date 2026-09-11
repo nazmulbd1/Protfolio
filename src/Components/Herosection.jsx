@@ -17,8 +17,8 @@ const HERO = {
   greeting: 'Welcome To My Creative Space',
   name: 'Nazmul Sheikh Nahid',
   headlineLine1: 'Full Stack Developer | React & Next.js Specialist',
-  headlineLine2: 'I build high-performance, scalable we applications with 1+ year of hands-on experience -turning ideas into elegant, production-ready digital products',
-  portraitAlt: 'Nazmul Sheikh Nahid — Designer এর ছবি',
+  headlineLine2: 'I build high-performance, scalable web applications with 1+ year of hands-on experience — turning ideas into elegant, production-ready digital products',
+  portraitAlt: 'Nazmul Sheikh Nahid — Designer image',
   experience: '1+ Years Experience',
   // পোর্ট্রেট ইমেজের লিঙ্ক (AI-generated)
   portraitImg:

@@ -18,7 +18,7 @@ import { ArrowRight, AsteriskIcon } from './Icons';
 const ABOUT = {
   heading: 'Transforming Ideas Into Digital Reality',
   description:
-    "I'm a passionate full stack web developer with over 1 years of experience building robust, scalable, and user-friendly web applications. My expertise spans across modern technologies including React and Next.js.",
+    "I'm a passionate full stack web developer with 1+ years of experience building robust, scalable, and user-friendly web applications. My expertise spans modern technologies including React and Next.js, Node.js, and MongoDB.",
 
   name: 'Nazmul Sheikh Nahid',
   role: 'Full Stack Developer',
@@ -381,7 +381,7 @@ function SatisfiedClients() {
       {/* দুই লাইন লেখা */}
       <div className="flex flex-col leading-tight">
         <span className="text-white font-bold text-[17px]">
-          Satisfied Clients
+          Let's collaborate
         </span>
         <span className="text-white/80 font-semibold text-[16px]">
           Worldwide

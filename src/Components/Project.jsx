@@ -1,56 +1,106 @@
 import Container from './Layouts/Container';
 import { cn } from '../lib/utils';
 import { AsteriskIcon, PhoneIcon } from './Icons';
+import project1 from '../assets/Frontendproject1.png'
+import project2 from '../assets/Frontendproject2.png'
+import project3 from '../assets/Frontendproject3.jpg'
 
 /* =========================================================
-   Projects Section — "My Projects / Showcase"
+   Projects Section — Full-Stack Developer এর প্রজেক্ট শোকেস
    ---------------------------------------------------------
    Layout:
      উপরে: "My Projects" Badge (black pill + orange asterisk)
-            + বড় শিরোনাম + সাবটাইটেল
+            + বড় শিরোনাম + সাবটাইটেল (full-stack focus)
      মাঝে: ৩টা Project Card (desktop-এ ৩ কলাম, mobile-এ ১ কলাম)
-     নিচে: CTA বার — "Let's Transform Your Ideas..." + View link
+           প্রতিটা Card এ: Image + Category + Title + Description
+                           + Tech Stack Badges (React/Node/MongoDB ইত্যাদি)
+     নিচে: CTA বার — "Got a project in mind?" + Contact link
    ========================================================= */
 
 /* =========================================================
    📝 আপনার তথ্য এখান থেকে পরিবর্তন করুন
+   ---------------------------------------------------------
+   💡 Tips: একজন Full-Stack Dev হিসেবে আপনার সেরা ৩-৪টা
+   real-world project এখানে রাখুন। প্রতিটার:
+   - category: কি ধরনের প্রজেক্ট (E-Commerce / SaaS / Real-Time)
+   - title: প্রজেক্টের নাম
+   - description: ১-২ লাইনে কাজ + কোন সমস্যা সমাধান করেছে
+   - techStack: ব্যবহৃত টেকনোলজি লিস্ট (badge হিসেবে দেখাবে)
+   - image: প্রজেক্টের screenshot / preview image URL
    ========================================================= */
 const PROJECTS = {
   badge: 'My Projects',
-  heading: 'A showcase of my best work',
+  heading: 'Full-Stack Projects I Built End-to-End',
   subtitle:
-    'From branding and UI/UX design to full website solutions, my work focuses on delivering impactful results that enhance user experience.',
+    'From pixel-perfect React frontends to scalable Node.js backends and databases — these projects showcase my complete stack expertise in building production-ready web apps.',
 
+  /* ---------- 📁 ৩টা প্রজেক্ট: Frontend + Backend + Full-Stack ---------- */
   cards: [
+    /* =====================================================
+       ১) Frontend Development Project
+       ===================================================== */
     {
-      category: 'Web Design',
-      title: 'Nova Design Studio',
+      category: 'Frontend Development',
+      title: 'Premium E-Commerce UI',
       description:
-        'A modern & creative design project focused',
-      image:
-        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Professional%20web%20designer%20working%20on%20laptop%20with%20green%20plants%20in%20background%2C%20modern%20office%2C%20warm%20lighting&image_size=landscape_4_3',
+        'A pixel-perfect, fully responsive frontend with 50+ reusable React components, smooth animations, dark/light mode, and SEO-optimized product pages with 98+ Lighthouse performance score.',
+      techStack: [
+        'React',
+        'Next.js 14',
+        'TypeScript',
+        'Tailwind CSS',
+        'Framer Motion',
+        'Shadcn UI',
+        'Figma',
+      ],
+      image: project1,
     },
+
+    /* =====================================================
+       ২) Backend & API Development Project
+       ===================================================== */
     {
-      category: 'Visual Identity',
-      title: 'NextGen User Interface',
+      category: 'Backend & API Development',
+      title: 'TaskFlow API — Enterprise Task Backend',
       description:
-        'A modern & creative design project focused',
-      image:
-        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Professional%20woman%20in%20red%20blazer%20working%20on%20white%20laptop%20with%20coffee%20cup%2C%20notebook%2C%20modern%20bright%20office%20interior&image_size=landscape_4_3',
+        'Production-grade RESTful API with role-based auth, real-time collaboration via WebSockets, Redis caching for 3x faster responses, 90%+ test coverage with Jest, and Dockerized AWS deployment.',
+      techStack: [
+        'Node.js',
+        'Express',
+        'MongoDB',
+        'JWT Auth',
+        'Redis',
+        'Jest',
+        'Docker',
+        'AWS S3',
+      ],
+      image: project2,
     },
+
+    /* =====================================================
+       ৩) Full-Stack E-Commerce Project
+       ===================================================== */
     {
-      category: 'E-Commerce',
-      title: 'E-Commerce Platform UI',
+      category: 'Full-Stack E-Commerce',
+      title: 'Complete E-Commerce Platform',
       description:
-        'A modern & creative design project focused',
-      image:
-        'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Professional%20woman%20in%20orange%20blazer%20reviewing%20tablet%20in%20modern%20coworking%20space%2C%20warm%20ambient%20lighting%2C%20furniture%20in%20background&image_size=landscape_4_3',
+        'A complete multi-vendor marketplace with Stripe payments, admin dashboard, product reviews, inventory tracking, and role-based authentication for customers & sellers.',
+      techStack: [
+        'React',
+        'Node.js',
+        'Express',
+        'MongoDB',
+        'Stripe',
+        'JWT',
+        'Tailwind',
+      ],
+      image: project3,
     },
   ],
 
   cta: {
-    text: "Let's Transform Your Ideas Into Reality",
-    linkLabel: 'View Our All Projects.',
+    text: 'Got a full-stack project in mind?',
+    linkLabel: "Let's build it together.",
   },
 };
 
@@ -100,13 +150,19 @@ function SectionHeader() {
 
 /* =========================================================
    ২) একক Project Card
-   Props: { image, category, title, description }
+   Props: { image, category, title, description, techStack }
    ========================================================= */
-function ProjectCard({ image, category, title, description }) {
+function ProjectCard({
+  image,
+  category,
+  title,
+  description,
+  techStack,
+}) {
   return (
     <div
       className={cn(
-        'group relative w-full h-full rounded-[28px]',
+        'group relative flex flex-col w-full h-full rounded-[28px]',
         'bg-surface-raised border border-white/5',
         'shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)]',
         'overflow-hidden',
@@ -115,7 +171,7 @@ function ProjectCard({ image, category, title, description }) {
       )}
     >
       {/* -------------------- উপরের ইমেজ অংশ -------------------- */}
-      <div className="p-4 pb-0">
+      <div className="p-4 pb-0 shrink-0">
         <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[20px]">
           <img
             src={image}
@@ -129,8 +185,8 @@ function ProjectCard({ image, category, title, description }) {
         </div>
       </div>
 
-      {/* -------------------- নিচের টেক্সট অংশ -------------------- */}
-      <div className="p-7 pt-6">
+      {/* -------------------- নিচের টেক্সট অংশ (flex-1 = সমান উচ্চতা) -------------------- */}
+      <div className="p-7 pt-6 flex flex-col flex-1">
         {/* ক্যাটাগরি (কমলা বুলেট + টেক্সট) */}
         <div className="flex items-center gap-3">
           <span
@@ -170,6 +226,27 @@ function ProjectCard({ image, category, title, description }) {
         >
           {description}
         </p>
+
+        {/* 🔧 Tech Stack Badges — শেষের দিকে নিচে push করার জন্য mt-auto */}
+        {techStack && techStack.length > 0 && (
+          <div className="mt-6 flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className={cn(
+                  'inline-flex items-center px-3 py-[6px] rounded-full',
+                  'text-[12px] font-semibold leading-none',
+                  'bg-primary/10 text-primary',
+                  'border border-primary/20',
+                  'transition-colors duration-200',
+                  'group-hover:bg-primary group-hover:text-text-inverse group-hover:border-primary',
+                )}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -177,14 +254,14 @@ function ProjectCard({ image, category, title, description }) {
 
 /* =========================================================
    ৩) নিচের CTA বার
-   "Let's Transform Your Ideas Into Reality - View Our All Projects."
+   "Got a full-stack project in mind? Let's build it together."
    ========================================================= */
 function CtaBar() {
   return (
     <div className="mt-16 lg:mt-20 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
       {/* বামে: ২টা avatar + কমলা Phone ব্যাকগ্রাউন্ড */}
       <div className="flex items-center shrink-0">
-        {/* প্রথম avatar (পিছনে) */}
+        {/* প্রথম avatar (পিছনে) — developer প্রোফাইল */}
         <div
           aria-hidden="true"
           className={cn(
@@ -193,7 +270,7 @@ function CtaBar() {
           )}
         >
           <img
-            src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Professional%20male%20portrait%20avatar%2C%20friendly%20smile%2C%20business%20casual&image_size=square"
+            src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Ultra-realistic%20professional%20headshot%20portrait%20of%20a%20young%20friendly%20male%20full-stack%20developer%2C%20soft%20smile%2C%20casual%20black%20tech%20t-shirt%2C%20modern%20minimal%20dark%20background%20with%20warm%20orange%20rim%20lighting%2C%20studio%20photography%2C%208K%20high%20detail%2C%20social%20media%20profile%20picture%20aesthetic&image_size=square"
             alt=""
             className="w-full h-full object-cover"
           />
@@ -216,7 +293,7 @@ function CtaBar() {
         {PROJECTS.cta.text}{' '}
         <span className="text-primary">
           <a
-            href="#projects"
+            href="#contact"
             className={cn(
               'font-bold underline underline-offset-4',
               'decoration-primary decoration-2',
