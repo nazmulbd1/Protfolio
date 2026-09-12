@@ -39,7 +39,7 @@ const FOOTER = {
     { label: 'Dhaka, Bangladesh', href: '#' },
   ],
 
-  aboutTitle: 'About Company',
+  aboutTitle: 'About Me',
   aboutText:
     'A creative professional dedicated to designing & developing modern digital experiences.',
 
@@ -47,19 +47,18 @@ const FOOTER = {
   quickLinks: [
     { label: 'Home',         href: '#' },
     { label: 'About Us',     href: '#' },
-    { label: 'Our Services', href: '#' },
+    { label: 'Services', href: '#' },
     { label: 'Blog',         href: '#' },
   ],
 
-  servicesTitle: 'Our Services',
+  servicesTitle: 'Services',
   services: [
-    { label: 'Brand Strategy & Identity', href: '#' },
-    { label: 'Frontend Development',      href: '#' },
-    { label: 'Backend Development',       href: '#' },
-    { label: 'Performance Optimization',  href: '#' },
+    { label: 'Frontend Development', href: '#' },
+    { label: 'Backend Development',      href: '#' },
+    { label: 'Full-Stack E-Commerce',       href: '#' },
   ],
 
-  newsletterTitle: 'Subscribe To Our Newsletter',
+  newsletterTitle: 'Subscribe To My Newsletter',
   newsletterText:
     'Stay updated with my latest projects, design insights, and creative ideas.',
   newsletterPlaceholder: 'Enter Email Address*',

@@ -26,10 +26,10 @@ const HERO = {
 };
 // সোশ্যাল মিডিয়া লিঙ্কগুলোর তালিকা
 const SOCIALS = [
-  { label: 'Pinterest',   Icon: PinterestIcon, href: '#' },
-  { label: 'X (Twitter)', Icon: XIcon,         href: '#' },
   { label: 'Facebook',    Icon: FacebookIcon,  href: '#' },
-  { label: 'Instagram',   Icon: InstagramIcon, href: '#' },
+  { label: 'Instagram',   Icon: InstagramIcon, href: '#' }, 
+  { label: 'X (Twitter)', Icon: XIcon,         href: '#' },  
+  { label: 'Pinterest',   Icon: PinterestIcon, href: '#' },
 ];
 // Stats — 4টা সংখ্যা/তথ্যের কলাম
 const STATS = [
@@ -189,7 +189,7 @@ function DownloadCvButton() {
         // basic look
         'group relative overflow-hidden z-0',
         'inline-flex items-center gap-3',
-        'px-6 py-3.5 rounded-pill',
+        'pl-5 pr-3 py-3 rounded-pill',
         'text-lg font-semibold text-text-inverse',
         'bg-primary transition-colors duration-400 ease-out',
         'hover:text-primary focus-visible:text-primary',
@@ -205,7 +205,7 @@ function DownloadCvButton() {
       <span
         className={cn(
           'relative z-10',
-          'w-10 h-10 rounded-xl flex items-center justify-center',
+          'w-8 h-8 rounded-3xl flex items-center justify-center',
           'bg-text-inverse transition-colors duration-400 ease-out',
           // Hover/focus: white → orange
           'group-hover:bg-primary group-focus-visible:bg-primary',
@@ -231,16 +231,16 @@ function SeeMyWorkButton() {
       role="button"
       className={cn(
         'group inline-flex items-center gap-3',
-        'px-2 py-3.5',
+        'pl-3 pr-4 py-3',
         'text-lg font-semibold text-text-inverse',
         'transition-colors duration-300 ease-out',
         'hover:text-primary focus-visible:text-primary',
         FOCUS_RING,
-        'rounded-md px-2',
+        'border border-gray-500 hover:border-primary rounded-4xl',
       )}>
       <span
         className={cn(
-          'w-11 h-11 rounded-full flex items-center justify-center',
+          'w-8 h-8 rounded-full flex items-center justify-center',
           'bg-primary text-text-inverse ring-1 ring-primary/20',
           'transition-transform duration-300 ease-out',
           'group-hover:scale-110 group-hover:bg-primary-hover',
@@ -265,7 +265,7 @@ function ActionRow() {
 // ১০) সোশ্যাল আইকন গুলো (4টা বৃত্ত)
 function Socials() {
   return (
-    <ul className="flex items-center gap-4 mt-12" aria-label="Social links">
+    <ul className="flex items-center gap-4 mt-8" aria-label="Social links">
       {SOCIALS.map(({ label, Icon, href }) => (
         <li key={label}>
           <a
@@ -273,14 +273,14 @@ function Socials() {
             aria-label={label}
             className={cn(
               'flex items-center justify-center',
-              'w-11 h-11 rounded-full',
+              'w-15 h-15 rounded-full',
               'border border-white/10 text-text-inverse',
               'transition-colors duration-300 ease-out',
-              'hover:text-primary hover:border-primary/40 hover:bg-white/5',
+              'hover:text-primary hover:border-primary/40 hover:bg-white/10',
               'focus-visible:text-primary focus-visible:border-primary/40',
               FOCUS_RING,
             )}>
-            <Icon size={18} />
+            <Icon size={32} />
           </a>
         </li>
       ))}

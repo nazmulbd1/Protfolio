@@ -17,8 +17,8 @@ const NAV_ITEMS = [
   { label: 'Home',      href: '/',         hasDropdown: false },
   { label: 'About Us',  href: '/about',    hasDropdown: false },
   { label: 'Services',  href: '/services', hasDropdown: false },
-  { label: 'Blog',      href: '/blog',     hasDropdown: false },
-  { label: 'Pages',     href: '/pages',    hasDropdown: false },
+  { label: 'Project',      href: '/project',     hasDropdown: false },
+  { label: 'Blog',     href: '/blog',    hasDropdown: false },
   // { label: 'Contact Us',href: '/contact',  hasDropdown: false },
 ];
 

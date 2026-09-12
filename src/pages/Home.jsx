@@ -33,7 +33,7 @@ function Home() {
         <img
           src={heroBgImage}
           aria-hidden="true"
-          alt=""
+          alt="heroBgImage"
           className="absolute inset-0 pointer-events-none object-cover object-center w-full h-full opacity-90"
         />
 
